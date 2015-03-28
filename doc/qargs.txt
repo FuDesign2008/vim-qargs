@@ -1,0 +1,27 @@
+*qargs.txt*  Populate arglist from the quicklist list
+
+Author:  Drew Neil <andrew.jr.neil@gmail.com>
+License: Same terms as Vim itself (see |license|)
+Homepage: http://github.com/nelstrom/vim-qargs
+
+This plugin is only available if 'compatible' is not set.
+
+INTRODUCTION                                    *qargs* *qargs-intro*
+
+                                                *:Qargs*
+:Qargs                 Populate the |{arglist}| with the filenames contained
+                       in the |quickfix| list.
+
+EXAMPLES                                        *qargs-examples*
+
+Populate the arglist with all files that contain "abc".
+
+    :grep abc
+    :Qargs
+
+Same as above, and also subsitute "abc" with "xyz" in each file.
+
+    :grep abc
+    :Qargs | argdo %s/abc/xyz/gc | update
+
+ vim:tw=78:et:ft=help:norl:
